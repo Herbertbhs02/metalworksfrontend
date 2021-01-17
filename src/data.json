@@ -1,0 +1,58 @@
+{
+    "products": [
+      {
+        "_id": "1",
+        "image": "/images/papaya.jpg",
+        "product": "Papaya",
+        "price": 1.5,
+        "description": "A very nice and tasty tropical fruit." 
+      },
+
+      {
+        "_id": "2",
+        "image": "/images/banana.jpg",
+        "product": "banana",
+        "price": 0.5,
+        "description": "A very nice and tasty tropical fruit."
+        
+      },
+
+      {
+        "_id": "3",
+        "image": "/images/pineapple.jpg",
+        "product": "Pipeapple",
+        "price": 2.00,
+        "description": "A very nice and tasty tropical fruit."
+        
+      },
+
+      {
+        "_id": "4",
+        "image": "/images/Apple.jpg",
+        "product": "Apple",
+        "price": 0.20,
+        "description": "A very nice and tasty tropical fruit."
+        
+      },
+
+      {
+        "_id": "5",
+        "image": "/images/strawberry.jpg",
+        "product": "Strawberry",
+        "price": 0.10,
+        "description": "A very nice and tasty tropical fruit."
+        
+      },
+
+      {
+        "_id": "6",
+        "image": "/images/clementine.jpg",
+        "product": "Clementine",
+        "price": 0.10,
+        "description": "A very nice and tasty tropical fruit."
+        
+      }
+      
+    ]
+  }
+  
