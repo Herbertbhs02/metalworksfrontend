@@ -17,6 +17,11 @@ header{
   background-color: #eee;
 }
 
+.totalprice{
+  background-color: yellow;
+  font-size: large;
+}
+
 .basket{
   background-color: #eee;
 }
