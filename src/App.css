@@ -60,4 +60,17 @@ header{
 }
  .cart-info{
    padding-left: 0% !important;
+   margin: 0% !important;
+   position: relative;
  }
+
+ .delete-btn{
+   width: 27% !important;
+   position: absolute;
+   top:0;
+ }
+
+ .add-btn{
+   margin-right:5% ;
+ }
+ 
