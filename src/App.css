@@ -1,14 +1,10 @@
 
-.Product{
-  margin: 5px;
-  display: grid;
-  grid-gap: 2px;
-  grid-template-columns: 4fr  1fr
- 
-}
-
 header{
   text-align: center;
+}
+
+.nav-link{
+  margin-right:100px !important ;
 }
 
 .products{
@@ -17,6 +13,11 @@ header{
   background-color: #eee;
 }
 
+.basket-area{
+  background-color:white;
+  
+  
+}
 .totalprice{
   background-color: yellow;
   font-size: large;
@@ -28,8 +29,8 @@ header{
 
 .Item{
   background-color: rgb(185, 201, 44);
-  max-width: 185px;
-  margin: 3px;
+  max-width: 180px;
+  margin: 2px;
 }
 
 .Item-content{
@@ -61,7 +62,7 @@ header{
 .cart-photo{
   width: 100%;
   height: 110px ;
-  margin: 1% !important;
+  margin: 2% !important;
 }
  .cart-info{
    padding-left: 0% !important;
@@ -71,6 +72,7 @@ header{
 
  .delete-btn{
    width: 27% !important;
+   height: 25%;
    position: absolute;
    top:0;
  }

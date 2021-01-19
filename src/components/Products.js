@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
+import swal from 'sweetalert';
 //import axios from 'axios'
 import data from '../data.json'
 import Item from './Item'
 import Cart from './Cart'
 
-
+const storeId = [];
 
 const Products = () => {
 
@@ -16,17 +17,29 @@ const [cart, setCart] = useState([])
 //Add item to the basket
 const selectedid = (e)=>{ 
   const selecteditem =  productdata.filter(n=>n._id===e.id)
+        
+         if(storeId.indexOf(e.id)>=0){return swal({
+          title: "oop!",
+          text: "Item already in the basket",
+          button: "OK",
+        })}//Terminate if already in the basket
+        
   //Add qty into the object
-  const Target = Object.assign(selecteditem[0], {qty:e.qty});
-  setCart([...cart,Target])
-   
+      const Target = Object.assign(selecteditem[0], {qty:e.qty});
+      setCart([...cart,Target])
+      storeId.push(e.id)
 }
 
 //delete item from the basket
 const deleteditem = (e)=>{   
+  
    const res = cart.filter(p=>p._id!==e)   
    setCart(res)
+   const pos =storeId.indexOf(e)
+   storeId.splice(pos, 1);//update storeId array
+  
 }  
+
 //Increment the qty of an item by one for each click
  const add_qty = (e)=>{
     cart.find(v=>v._id ===e.id).qty=e.qty
@@ -35,6 +48,7 @@ const deleteditem = (e)=>{
 
 //Decrement the qty of an item by one for each click
 const remove_qty = (e)=>{
+       if(e.qty <= 0){return} //stop the decrement below zero. Terminate the operation
   cart.find(v=>v._id ===e.id).qty=e.qty
   setCart([...cart]) 
 }
@@ -55,9 +69,10 @@ const display = productdata.map(item=>(<div key={item._id}><Item image={item.ima
               {display}
         </div>  
 
-        <div className=' col s12 m2'>
+        <div className='basket-area col s12 m2'>
         <i class="material-icons ">shopping_cart</i><b>Basket cost: </b><span className='totalprice'>£{totalprice.toFixed(2)}</span>
-             {basket}
+             
+             {(cart.length!==0 ? basket : <p>Basket Empty</p>)}
         </div>
          
   
