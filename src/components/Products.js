@@ -19,8 +19,8 @@ const selectedid = (e)=>{
   const selecteditem =  productdata.filter(n=>n._id===e.id)
         
          if(storeId.indexOf(e.id)>=0){return swal({
-          title: "oop!",
-          text: "Item already in the basket",
+          title: "oops!",
+          text: "Item already in basket",
           button: "OK",
         })}//Terminate if already in the basket
         

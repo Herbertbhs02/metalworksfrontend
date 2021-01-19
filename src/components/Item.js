@@ -16,12 +16,13 @@ const Item = ({name,price,image,id,selectedid}) => {
                 
                 <div className="card-content Item-content">
                 <p><b>Product:</b> {name}</p>
-                  <p><b>Price:</b> £{price}</p>
+                  <p><b>Price:</b> £{price.toFixed(2)}</p>
                   <span className="card-title activator "><i className="material-icons right">more</i></span>
                   
                 </div>
                 <div className="card-reveal">
-                  <span className="card-title grey-text text-darken-4"><b>{name}</b>More<i className="material-icons right">X</i></span>
+                  
+                  <span className="card-title  card-more grey-text text-darken-4"><b>{name}</b><i className=" icon-close material-icons right">close</i></span>
                   <p>A very nice and tasty tropical fruit.</p>
                 </div>
                

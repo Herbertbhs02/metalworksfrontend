@@ -81,3 +81,16 @@ header{
    margin-right:5% ;
  }
  
+ .icon-close{
+    position: absolute;
+ }
+
+ .card-more{
+   position: relative;
+   top:0;
+   
+  
+
+ }
+
+
