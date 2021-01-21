@@ -4,6 +4,7 @@ import swal from 'sweetalert';
 import data from '../data.json'
 import Item from './Item'
 import Cart from './Cart'
+import Checkout from './Checkout'
 
 const storeId = [];
 
@@ -60,7 +61,7 @@ const totalprice = cart.reduce((a, c) => a + c.price * c.qty, 0)
 const basket = cart.map(item=>(<div key={item._id}><Cart qty={item.qty} product={item.product} price={item.price} image={item.image} deleteditem={deleteditem} id={item._id} add_qty={add_qty} remove_qty={remove_qty}/></div>))
 
 //List products. Item component is used in the map() method
-const display = productdata.map(item=>(<div key={item._id}><Item image={item.image} name={item.product} price={item.price} id={item._id} selectedid={selectedid}/></div>))
+const display = productdata.map(item=>(<div key={item._id}><Item image={item.image} name={item.product} price={item.price} description={item.description} id={item._id} selectedid={selectedid}/></div>))
 
   return (
    <div className='row'>
@@ -69,13 +70,12 @@ const display = productdata.map(item=>(<div key={item._id}><Item image={item.ima
               {display}
         </div>  
 
-        <div className='basket-area col s12 m2'>
+        <div className='basket-area col s12 m2'>              
         <i class="material-icons ">shopping_cart</i><b>Basket cost: </b><span className='totalprice'>£{totalprice.toFixed(2)}</span>
-             
+        {(cart.length!==0 && <Checkout cart={cart} totalprice={totalprice}/>)}  
              {(cart.length!==0 ? basket : <p>Basket Empty</p>)}
+             
         </div>
-         
-  
     </div>
 
   )

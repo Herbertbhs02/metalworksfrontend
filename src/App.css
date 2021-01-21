@@ -11,12 +11,12 @@ header{
   display: flex;
   flex-wrap: wrap;
   background-color: #eee;
+ 
 }
 
 .basket-area{
-  background-color:white;
-  
-  
+  background-color:#d7ccc8;
+ 
 }
 .totalprice{
   background-color: yellow;
@@ -31,6 +31,7 @@ header{
   background-color: rgb(185, 201, 44);
   max-width: 180px;
   margin: 2px;
+  
 }
 
 .Item-content{
@@ -54,11 +55,14 @@ header{
   height:120px !important;
   width: 200px !important;
   background-color:#cddc39 ;
-  margin-bottom: 2px;
- 
- 
+  margin-bottom: 3px;
 }
-
+ 
+.checkout{
+  background-color: #006064 !important;
+  width: 200px !important;
+  margin-bottom: 1%;
+}
 .cart-photo{
   width: 100%;
   height: 110px ;
@@ -88,9 +92,10 @@ header{
  .card-more{
    position: relative;
    top:0;
-   
-  
-
  }
+
+ 
+
+
 
 

@@ -13,7 +13,7 @@
         "image": "/images/banana.jpg",
         "product": "banana",
         "price": 0.5,
-        "description": "A very nice and tasty tropical fruit."
+        "description": "Organically grown banana."
         
       },
 
@@ -22,7 +22,7 @@
         "image": "/images/pineapple.jpg",
         "product": "Pipeapple",
         "price": 2.00,
-        "description": "A very nice and tasty tropical fruit."
+        "description": "A pipeapple with a natural sweet taste and organically produced ."
         
       },
 
@@ -31,7 +31,7 @@
         "image": "/images/Apple.jpg",
         "product": "Apple",
         "price": 0.20,
-        "description": "A very nice and tasty tropical fruit."
+        "description": "Fresh and tasty apple locally produced."
         
       },
 
@@ -40,7 +40,7 @@
         "image": "/images/strawberry.jpg",
         "product": "Strawberry",
         "price": 0.10,
-        "description": "A very nice and tasty tropical fruit."
+        "description": "Fresh and juicy strawberry ."
         
       },
 
@@ -49,7 +49,7 @@
         "image": "/images/clementine.jpg",
         "product": "Clementine",
         "price": 0.10,
-        "description": "A very nice and tasty tropical fruit."
+        "description": "Fresh sweet taste clementine."
         
       }
       
