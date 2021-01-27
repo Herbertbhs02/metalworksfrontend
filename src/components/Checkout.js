@@ -1,7 +1,9 @@
 import React,{useState} from 'react'
 import Modal from 'react-modal';
 import '../App.css';
+import Payment from './Payment'
 
+//Modal code
 const customStyles = {
   overlay:{
     backgroundColor:'grey',
@@ -35,8 +37,11 @@ const Checkout = ({cart,totalprice}) => {
  
   const  closeModal = ()=>{
     setIsOpen(false);
+    
   } 
   const shopping = cart.map(item=><div><span>Product:{item.qty}x{item.product} £:{(item.qty*item.price).toFixed(2)}</span></div>)
+
+
 
   return (
     <div>
@@ -50,15 +55,21 @@ const Checkout = ({cart,totalprice}) => {
           
           <form >
             <span5><b>Purchase summary</b></span5><br/>
-            <span><b>Total of:</b>£{totalprice} </span>
+            <span><b>Total of:</b>£{totalprice.toFixed(2)} </span>
               {shopping}
-              <input required type='email' name='email' placeholder='Type your email'></input>
-              <textarea placeholder='Enter the shipping address'></textarea>
-              
+              {/* <input className='email' required  name='email' placeholder='Type your email'/>
+              <textarea className='address'  placeholder='Enter the shipping address'></textarea>  */}
           </form>
 
           <button className='btn-small' onClick={closeModal}>Back</button>
-          <button className='btn-small right' >Pay</button>
+          <Payment  totalprice = {totalprice.toFixed(2)}
+                    name='purchasedItems'
+                    description='variousItems'
+                    />
+          
+       
+               
+
         </Modal>
     </div>
   )

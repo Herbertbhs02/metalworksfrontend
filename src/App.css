@@ -94,7 +94,28 @@ header{
    top:0;
  }
 
+ ::placeholder {
+  color: black;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: black;
+ }
  
+ ::-ms-input-placeholder { /* Microsoft Edge */
+  color: black;
+ }
+
+ .email{
+  border:1px solid black !important;
+  height: 30px !important;
+ }
+
+ .address{
+  border:1px solid black !important;
+  height: 90px !important;
+ }
 
 
 
