@@ -5,7 +5,7 @@ import data from '../data.json'
 import Item from './Item'
 import Cart from './Cart'
 import Checkout from './Checkout'
-import Payment from './Payment'
+//import Payment from './Payment'
 
 const storeId = [];
 
@@ -76,10 +76,6 @@ const display = productdata.map(item=>(<div key={item._id}><Item image={item.ima
         {(cart.length!==0 && <Checkout cart={cart} totalprice={totalprice}/>)}  
              {(cart.length!==0 ? basket : <p>Basket Empty</p>)}    
         </div>
-
-        {/* <div>
-          <Payment/>
-        </div> */}
 
     </div>
 

@@ -1,7 +1,13 @@
 import React,{useState} from 'react'
 import Modal from 'react-modal';
 import '../App.css';
-import Payment from './Payment'
+
+
+import StripeCheckout from "react-stripe-checkout";
+import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+toast.configure();
 
 //Modal code
 const customStyles = {
@@ -27,8 +33,7 @@ const customStyles = {
 
 Modal.setAppElement('#root')
 const Checkout = ({cart,totalprice}) => {
-  console.log(cart)
-  console.log(totalprice)
+  
   const [modalIsOpen,setIsOpen] = useState(false);
 
   const openModal = ()=>{
@@ -40,7 +45,28 @@ const Checkout = ({cart,totalprice}) => {
     
   } 
   const shopping = cart.map(item=><div><span>Product:{item.qty}x{item.product} £:{(item.qty*item.price).toFixed(2)}</span></div>)
+//End of modal code
+//Stripe payment code
+    const [product] = React.useState({
+      name:'purchasedItems',          
+      price:totalprice.toFixed(2),
+      description:'variousItems'
+    });
 
+      const handleToken = async(token, addresses)=> {
+      console.log({token, addresses})
+      const response = await axios.post('http://localhost:8080/checkout',{token,product}) 
+      
+     const { status } = response.data;
+     console.log("Response:", response.data);
+     if (status === "success") {
+       toast("Success! Check email for details", { type: "success" });
+       setIsOpen(false);
+      
+     } else {
+       toast("Something went wrong", { type: "error" });
+     }
+    }
 
 
   return (
@@ -56,20 +82,19 @@ const Checkout = ({cart,totalprice}) => {
           <form >
             <span5><b>Purchase summary</b></span5><br/>
             <span><b>Total of:</b>£{totalprice.toFixed(2)} </span>
-              {shopping}
-              {/* <input className='email' required  name='email' placeholder='Type your email'/>
-              <textarea className='address'  placeholder='Enter the shipping address'></textarea>  */}
+              {shopping} 
           </form>
 
           <button className='btn-small' onClick={closeModal}>Back</button>
-          <Payment  totalprice = {totalprice.toFixed(2)}
-                    name='purchasedItems'
-                    description='variousItems'
-                    />
-          
+        
+            <StripeCheckout
+        stripeKey="pk_test_51IDG6vGWpVzA8Bj4QhPBZfoXD6BKjZ8PkLyYQliyeipssJRYjJBAcf0501HN7GuK72PKnL65D2yY5YgeRNdxLMGP001gh5iVM7"
+        token={handleToken}
+        billingAddress
+        shippingAddress
+        amount={totalprice*100}
+      />
        
-               
-
         </Modal>
     </div>
   )
