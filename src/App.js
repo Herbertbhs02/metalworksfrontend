@@ -10,7 +10,7 @@ function App() {
   return (
     <div >
       <Navbar/>
-      <header><h5>Available Items Below</h5></header>
+      
         <div className='App'>
             <Products/>
             

@@ -4,6 +4,7 @@
         "_id": "1",
         "image": "/images/papaya.jpg",
         "product": "Papaya",
+        "category":"Fruits",
         "price": 1.5,
         "description": "A very nice and tasty tropical fruit." 
       },
@@ -12,6 +13,7 @@
         "_id": "2",
         "image": "/images/banana.jpg",
         "product": "banana",
+        "category":"Fruits",
         "price": 0.5,
         "description": "Organically grown banana."
         
@@ -21,6 +23,7 @@
         "_id": "3",
         "image": "/images/pineapple.jpg",
         "product": "Pipeapple",
+        "category":"Fruits",
         "price": 2.00,
         "description": "A pipeapple with a natural sweet taste and organically produced ."
         
@@ -30,6 +33,7 @@
         "_id": "4",
         "image": "/images/Apple.jpg",
         "product": "Apple",
+        "category":"Fruits",
         "price": 0.20,
         "description": "Fresh and tasty apple locally produced."
         
@@ -39,6 +43,7 @@
         "_id": "5",
         "image": "/images/strawberry.jpg",
         "product": "Strawberry",
+        "category":"Fruits",
         "price": 0.10,
         "description": "Fresh and juicy strawberry ."
         
@@ -48,6 +53,7 @@
         "_id": "6",
         "image": "/images/clementine.jpg",
         "product": "Clementine",
+        "category":"Fruits",
         "price": 0.10,
         "description": "Fresh sweet taste clementine."
         

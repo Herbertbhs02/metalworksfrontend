@@ -32,28 +32,31 @@ const customStyles = {
 };
 
 Modal.setAppElement('#root')
-const Checkout = ({cart,totalprice}) => {
+const Checkout = ({cart,totalprice, clearchart}) => {
   
   const [modalIsOpen,setIsOpen] = useState(false);
 
   const openModal = ()=>{
     setIsOpen(true)
+   
   }
- 
   const  closeModal = ()=>{
     setIsOpen(false);
-    
   } 
+
+  
+
   const shopping = cart.map(item=><div><span>Product:{item.qty}x{item.product} £:{(item.qty*item.price).toFixed(2)}</span></div>)
 //End of modal code
 //Stripe payment code
     const [product] = React.useState({
       name:'purchasedItems',          
       price:totalprice.toFixed(2),
-      description:'variousItems'
+      description:'variousItems',
+      clearchart
     });
 
-      const handleToken = async(token, addresses)=> {
+      const handleToken = async(token, addresses,)=> {
       console.log({token, addresses})
       const response = await axios.post('http://localhost:8080/checkout',{token,product}) 
       
@@ -62,6 +65,7 @@ const Checkout = ({cart,totalprice}) => {
      if (status === "success") {
        toast("Success! Check email for details", { type: "success" });
        setIsOpen(false);
+      product.clearchart()// clear cart after payment
       
      } else {
        toast("Something went wrong", { type: "error" });
