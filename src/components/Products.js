@@ -18,7 +18,7 @@ const [categorypick, setCategorypick] = useState("Clothes")
 
 //Function to select product category
 const selection = async(e)=>{
-  const response = await axios.get('http://localhost:8080/retrieveproducts',{params:{category:e}})
+  const response = await axios.get('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/retrieveproducts',{params:{category:e}})
   setProductdata(response.data)
 }
 
@@ -26,7 +26,7 @@ useEffect(()=>{
   
   const getproducts = async()=>{
     
-  const res = await axios.get('http://localhost:8080/retrieveproducts',{params:{category:categorypick}})
+  const res = await axios.get('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/retrieveproducts',{params:{category:categorypick}})
   setProductdata(res.data)
   }
   getproducts()
