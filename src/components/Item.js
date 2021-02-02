@@ -10,7 +10,7 @@ const Item = ({name,price,image,description,id,selectedid}) => {
           
              <div className="card Item">
                 <div className="card-image waves-effect waves-block waves-light">
-                  <img className='photo' src={image} alt='product-image'/>
+                  <img src={image} alt='product-image'/>
                 </div>
                 
                 <div className="card-content Item-content">
