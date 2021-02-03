@@ -58,7 +58,7 @@ const Checkout = ({cart,totalprice, clearchart}) => {
 
       const handleToken = async(token, addresses,)=> {
       console.log({token, addresses})
-      const response = await axios.post('http://localhost:8080/checkout',{token,product}) 
+      const response = await axios.post('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/checkout',{token,product}) 
       
      const { status } = response.data;
      console.log("Response:", response.data);
