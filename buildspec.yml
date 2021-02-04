@@ -1,0 +1,16 @@
+version: 0.2
+
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm run build
+ 
+artifacts:
+  files:
+    - '**/*''
+  discard-paths: no
+  base-directory: build
