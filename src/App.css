@@ -38,7 +38,10 @@ header{
 }
 
 .Item-qty{
-  height: 35px;
+  height: 30px !important;
+  width: 65px !important;
+  background-color:white !important;
+  border: 2px dotted black !important;
 }
 
 .Item-btn{
@@ -117,6 +120,9 @@ header{
  .radio-btn{
    margin-right: 30px;
  }
+
+
+
 
 
 

@@ -24,8 +24,8 @@ const Item = ({name,price,image,description,id,selectedid}) => {
                   <span className="card-title  card-more grey-text text-darken-4"><b>{name}</b><i className=" icon-close material-icons right">close</i></span>
                   <p>{description}</p>
                 </div>
-               
-                <input type='pin' placeholder='Enter qty' size='4' name='' value={qty} onChange={amount} className='Item-qty'/>
+                  
+                <input type='Number' min='1' placeholder='Enter qty' size='4' value={qty} onChange={amount} className='Item-qty'/>
                 <button className="btn Item-btn waves-effect waves-light" onClick={()=>selectedid({id,qty:qty})}
                 type="submit" name="add">Add<i className="material-icons right">shopping_cart</i>   
                 </button>
