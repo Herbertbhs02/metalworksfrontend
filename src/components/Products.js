@@ -6,7 +6,9 @@ import Item from './Item'
 import Category from './Category'
 import Cart from './Cart'
 import Checkout from './Checkout'
-//import Payment from './Payment'
+// import Login from './Login'
+import RegLoginModal from './RegLoginModal'
+import Navbar from './Navbar';
 
 const storeId = [];
 
@@ -14,7 +16,10 @@ const Products = () => {
 
 const [productdata, setProductdata] = useState([])//data.products
 const [cart, setCart] = useState([])
-const [categorypick, setCategorypick] = useState("Clothes")
+const [login, setLogin] = useState(false)//Customer login in status
+const [customerEmail, setCustomerEmail] = useState('signIn')//Customer login in status
+const [signInModal, setSignInModal] = useState(false)//used to activate sign in modal from nav bar link
+const [categorypick, setCategorypick] = useState("Clothes")//set Clothes category as a default product
 
 //Function to select product category
 const selection = async(e)=>{
@@ -25,7 +30,6 @@ const selection = async(e)=>{
 useEffect(()=>{
   
   const getproducts = async()=>{
-    
   const res = await axios.get('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/retrieveproducts',{params:{category:categorypick}})
   setProductdata(res.data)
   }
@@ -36,12 +40,14 @@ useEffect(()=>{
 //Add item to the basket
 const selectedid = (e)=>{ 
   const selecteditem =  productdata.filter(n=>n._id===e.id)
-        
-         if(storeId.indexOf(e.id)>=0){return swal({
-          title: "oops!",
-          text: "Item already in basket",
-          button: "OK",
-        })}//Terminate if already in the basket
+         if(!login){
+         return swal('Sign in before you continue with your shopping please')
+
+         }else if(storeId.indexOf(e.id)>=0){return swal({
+                title: "oops!",
+                text: "Item already in basket",
+                button: "OK",
+              })}//Terminate if already in the basket
         
   //Add qty into the object
       const Target = Object.assign(selecteditem[0], {qty:e.qty});
@@ -82,24 +88,41 @@ const basket = cart.map(item=>(<div key={item._id}><Cart qty={item.qty} product=
 const display = productdata.map(item=>(<div key={item._id}><Item image={item.image} name={item.product} price={item.price} description={item.description} id={item._id} selectedid={selectedid}/></div>))
  
 // clears the chart after shopping
-const clearchart = ()=>{setCart([]);  console.log('chart reset')}// clears the chart after shopping
+const clearchart = ()=>{setCart([])}// clears the chart after shopping
 
-
-
+//Customer login status
+const customerLogin = (e)=>{
+   setLogin(true)
+   setCustomerEmail(e)
+}
+console.log(login)
+//Activate login initiated by sign in in the nav bar
+const activatelogin = ()=>{
+  setSignInModal(true)
+}
+//Close login Modal
+const closeModal = ()=>{
+  setSignInModal(false)
+}
   return (
-   <div className='row'>
-          
-         <Category selection={selection}/>
-        <div className=' products col s12 m10'>
-              {display}
-        </div>  
+      <div>
+             <Navbar activatelogin={activatelogin} email={customerEmail}/>
+        <div className='row'>
+            <Category selection={selection}/>
+            <div className=' products col s12 m10'>
+                  {display}
+            </div>  
 
-        <div className='basket-area col s12 m2'>              
-        <i class="material-icons ">shopping_cart</i><b>Basket cost: </b><span className='totalprice'>£{totalprice.toFixed(2)}</span>
-        {(cart.length!==0 && <Checkout cart={cart} totalprice={totalprice} clearchart ={clearchart}/>)}  
-             {(cart.length!==0 ? basket : <p>Basket Empty</p>)}    
-        </div>
+            <div className='basket-area col s12 m2'>              
+            <i class="material-icons ">shopping_cart</i><b>Basket cost: </b><span className='totalprice'>£{totalprice.toFixed(2)}</span>
+            {(cart.length!==0 && <Checkout cart={cart} totalprice={totalprice} clearchart ={clearchart} />)}  
+                {(cart.length!==0 ? basket : <p>Basket Empty</p>)}    
+          </div>
 
+        
+        <RegLoginModal customerLogin={customerLogin} signInModal={signInModal} closeModal={closeModal}/>
+        
+      </div>
     </div>
 
   )

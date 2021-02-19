@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 toast.configure();
 
-//Modal code
+//Modal style 
 const customStyles = {
   overlay:{
     backgroundColor:'grey',
@@ -47,6 +47,7 @@ const Checkout = ({cart,totalprice, clearchart}) => {
   
 
   const shopping = cart.map(item=><div><span>Product:{item.qty}x{item.product} £:{(item.qty*item.price).toFixed(2)}</span></div>)
+ 
 //End of modal code
 //Stripe payment code
     const [product] = React.useState({
