@@ -18,7 +18,7 @@ class Register extends Component {
                      const  {confirm, ...reg}= this.state //using ES6 to filter out password confirm property
                      
               //API to register your details on Server  
-            const response = await axios.post('http://localhost:8080/register', reg)
+            const response = await axios.post('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/register', reg)
             this.props.selectlogin()
             console.log(response)
               this.setState({name:'',

@@ -16,7 +16,7 @@ class Login extends Component {
                 
                 const {isLogin, ...log} = this.state
                 //console.log(log)
-                const response = await axios.post('http://localhost:8080/login', log)
+                const response = await axios.post('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/login', log)
                 if(response.data.status===200){
                   //remove the login modal
                   this.props.login(response.data.email)
