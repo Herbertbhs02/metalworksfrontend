@@ -108,6 +108,7 @@ const closeModal = ()=>{
 const logOut = ()=>{
   setCustomerEmail('signIn')
   setLogin(false)
+  setCart([])
 }
 
   return (
