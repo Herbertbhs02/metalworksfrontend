@@ -131,6 +131,21 @@ header{
    right: 1px;
  }
 
+ .navbar{
+  
+  width:auto;
+  height:0.5%;
+  border: 1px solid black;
+  border-radius:6px;
+  box-shadow: 4px 3px gray;
+  margin:2px; 
+ 
+}
+
+.nav-wrapper{
+  padding-left: 10px;
+}
+
 
 
 

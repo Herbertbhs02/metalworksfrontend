@@ -4,9 +4,9 @@ const Navbar = ({activatelogin, email}) => {
 
 
   return (
-    <div className='navbar'>
+    <div className='navbar '>
        <nav>
-    <div className="nav-wrapper">
+    <div className="nav-wrapper orange darken-5">
     
       <a href="#" className="brand-logo ">Shopline</a>
       <ul id="nav-mobile" className="right hide-on-med-and-down">
