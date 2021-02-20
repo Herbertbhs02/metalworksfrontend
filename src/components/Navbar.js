@@ -14,11 +14,9 @@ const Navbar = ({activatelogin, email, logOut}) => {
       :<li className='nav-link'><a href="#">{email}<i className="material-icons left">account_circle</i></a>
        <ul className='navlogout'><li><a href="#" onClick={logOut}>Logout</a></li></ul>
       </li>)}
-
+       <li className='nav-link'><a href="#">Contact</a></li>
       
-      <li className='nav-link'><a href="#">Contact</a>
-      <ul className='navlogout '><li><a href="#">Logout</a></li></ul>
-      </li>
+       
           
       </ul>
       
