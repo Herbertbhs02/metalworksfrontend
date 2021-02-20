@@ -45,7 +45,9 @@ const RegLoginModal = ({customerLogin, signInModal, closeModal})=> {
   });
  
  //close login/registration form if you don't want to continue
- const close_log_regForm = ()=>{ log.closeModal()}
+ const close_log_regForm = ()=>{
+  setSelect(false)
+  log.closeModal()}
 //login
   const login = (e)=>{
             
