@@ -55,7 +55,8 @@ const RegLoginModal = ({customerLogin, signInModal, closeModal})=> {
             log.closeModal()
   }
   
-  const selectedComponent = (select ? <Register selectlogin={selectlogin} close_log_regForm={close_log_regForm} /> :<Login selectReg={selectReg} login={login} close_log_regForm={close_log_regForm}/>) 
+  const selectedComponent = (select ? <Register selectlogin={selectlogin} close_log_regForm={close_log_regForm} /> 
+                             :<Login selectReg={selectReg} login={login} close_log_regForm={close_log_regForm}/>) 
  
   return (
     <div>

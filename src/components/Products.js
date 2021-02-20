@@ -104,9 +104,15 @@ const activatelogin = ()=>{
 const closeModal = ()=>{
   setSignInModal(false)
 }
+//Logout
+const logOut = ()=>{
+  setCustomerEmail('signIn')
+  setLogin(false)
+}
+
   return (
       <div>
-             <Navbar activatelogin={activatelogin} email={customerEmail}/>
+             <Navbar activatelogin={activatelogin} email={customerEmail} logOut={logOut}/>
         <div className='row'>
             <Category selection={selection}/>
             <div className=' products col s12 m10'>

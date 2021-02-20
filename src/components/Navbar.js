@@ -1,6 +1,6 @@
 import React, {useState}  from 'react'
 
-const Navbar = ({activatelogin, email}) => {
+const Navbar = ({activatelogin, email, logOut}) => {
 
 
   return (
@@ -11,8 +11,14 @@ const Navbar = ({activatelogin, email}) => {
       <a href="#" className="brand-logo ">Shopline</a>
       <ul id="nav-mobile" className="right hide-on-med-and-down">
       {(email==='signIn' ? <li className='nav-link'><a href="#" onClick={activatelogin}>Sign in/Register</a></li>
-      :<li className='nav-link'><a href="#">{email}<i className="material-icons left">account_circle</i></a></li>)}
-      <li className='nav-link'><a href="#">Contact</a></li>
+      :<li className='nav-link'><a href="#">{email}<i className="material-icons left">account_circle</i></a>
+       <ul className='navlogout'><li><a href="#" onClick={logOut}>Logout</a></li></ul>
+      </li>)}
+
+      
+      <li className='nav-link'><a href="#">Contact</a>
+      <ul className='navlogout '><li><a href="#">Logout</a></li></ul>
+      </li>
           
       </ul>
       
