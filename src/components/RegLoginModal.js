@@ -44,14 +44,16 @@ const RegLoginModal = ({customerLogin, signInModal, closeModal})=> {
     closeModal
   });
  
- 
+ //close login/registration form if you don't want to continue
+ const close_log_regForm = ()=>{ log.closeModal()}
+//login
   const login = (e)=>{
             
             log.customerLogin(e)
             log.closeModal()
   }
   
-  const selectedComponent = (select ? <Register selectlogin={selectlogin}/> :<Login selectReg={selectReg} login={login} />) 
+  const selectedComponent = (select ? <Register selectlogin={selectlogin} close_log_regForm={close_log_regForm} /> :<Login selectReg={selectReg} login={login} close_log_regForm={close_log_regForm}/>) 
  
   return (
     <div>

@@ -45,6 +45,7 @@ class Register extends Component {
                 <input type='password' name='confirm' value={this.state.confirm} placeholder='Confirm Password' autoComplete='none' onChange={this.change}/><br/>
                 <button >Submit</button>
             </form>
+            <button className="modal-close"  onClick={this.props.close_log_regForm}><i className="  material-icons right">close</i></button>
         </div>
   )
   }

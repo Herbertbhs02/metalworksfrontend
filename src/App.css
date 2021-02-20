@@ -125,6 +125,12 @@ header{
    margin-right: 25px;
  }
 
+ .modal-close{
+   position:absolute;
+   top:0;
+   right: 1px;
+ }
+
 
 
 

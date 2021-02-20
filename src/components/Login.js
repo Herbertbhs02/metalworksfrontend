@@ -24,7 +24,7 @@ class Login extends Component {
 
                   //store the token in local store
                   localStorage.setItem('auth-token', response.data.token);localStorage.setItem('id', response.data.id)
-                  localStorage.setItem('email', response.data.email)
+                  
                   //show customer email in the nav-bar
                   //Use customer id to fetch previous purchase
                   swal('successfully login, Click ok to continue shopping')
@@ -41,7 +41,7 @@ class Login extends Component {
 
     render() {
         return (
-            <div>
+            <div >
               
                 <form onSubmit={this.login}>
                   <input type='text' name='email' value={this.state.email.trim()} placeholder='email'  onChange={this.change} /><br/>
@@ -49,7 +49,7 @@ class Login extends Component {
                   <button>Sign in</button> 
                 </form><br/>
                 <button onClick={this.props.selectReg}>Register</button>
-                
+                <button className="modal-close" onClick={this.props.close_log_regForm}><i className=" material-icons right">close</i></button>
             </div>
         );
     }
