@@ -44,8 +44,6 @@ const Checkout = ({cart,totalprice, clearchart}) => {
     setIsOpen(false);
   } 
 
-  
-
   const shopping = cart.map(item=><div><span>Product:{item.qty}x{item.product} £:{(item.qty*item.price).toFixed(2)}</span></div>)
  
 //End of modal code
@@ -54,11 +52,13 @@ const Checkout = ({cart,totalprice, clearchart}) => {
       name:'purchasedItems',          
       price:totalprice.toFixed(2),
       description:'variousItems',
-      clearchart
+      clearchart,
+      cart
     });
 
       const handleToken = async(token, addresses,)=> {
-      console.log({token, addresses})
+      // console.log({token, addresses})
+      console.log(product)
       const response = await axios.post('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/checkout',{token,product}) 
       
      const { status } = response.data;

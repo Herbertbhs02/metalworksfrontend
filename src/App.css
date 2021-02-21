@@ -151,9 +151,11 @@ header{
   background-color:black;
 }
 
-
 .nav-link:hover ul{
   display: block ;
+}
+.nav-li{
+  margin-left: 14px;
 }
 
 

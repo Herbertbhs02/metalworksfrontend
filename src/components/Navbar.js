@@ -12,9 +12,13 @@ const Navbar = ({activatelogin, email, logOut}) => {
       <ul id="nav-mobile" className="right hide-on-med-and-down">
       {(email==='signIn' ? <li className='nav-link'><a href="#" onClick={activatelogin}>Sign in/Register</a></li>
       :<li className='nav-link'><a href="#">{email}<i className="material-icons left">account_circle</i></a>
-       <ul className='navlogout'><li><a href="#" onClick={logOut}>Logout</a></li></ul>
+       <ul className='navlogout'><li><a className='nav-li' href="#" onClick={logOut}>Logout</a></li></ul>
       </li>)}
-       <li className='nav-link'><a href="#">Contact</a></li>
+       <li className='nav-link'><a href="#">Contact</a>
+          <ul className='navlogout'>
+            <li><div className='nav-li' href="#" >Email: h.sev@tiscali.co.uk</div></li>
+          </ul>
+      </li>
       
        
           
