@@ -49,9 +49,9 @@ const RegLoginModal = ({customerLogin, signInModal, closeModal})=> {
   setSelect(false)
   log.closeModal()}
 //login
-  const login = (e)=>{
+  const login = (e, history)=>{
             
-            log.customerLogin(e)
+            log.customerLogin(e, history)
             log.closeModal()
   }
   

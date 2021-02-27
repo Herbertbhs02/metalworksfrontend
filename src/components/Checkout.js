@@ -60,8 +60,8 @@ const Checkout = ({cart,totalprice, clearchart, customerId}) => {
 
       const handleToken = async(token, addresses,)=> {
       
-      const response = await axios.post('http://localhost:8080/checkout',{token,product, totalprice}) 
-      
+      const response = await axios.post('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/checkout',{token,product, totalprice}) 
+      //'http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/checkout'
      const { status } = response.data;
      console.log("Response:", response.data);
      if (status === "success") {
@@ -69,8 +69,8 @@ const Checkout = ({cart,totalprice, clearchart, customerId}) => {
        setIsOpen(false);
       clearchart()// clear cart after payment
       //Save customer purchase details 
-      const res = await axios.post('http://localhost:8080/purchasehistory',{cart, totalprice, customerId})      
-       console.log(res)
+      const res = await axios.post('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/purchasehistory',{cart, totalprice, customerId})      
+       console.log('History',res)
       
      } else {
        toast("Something went wrong", { type: "error" });

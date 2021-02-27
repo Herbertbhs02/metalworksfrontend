@@ -19,6 +19,7 @@ const [cart, setCart] = useState([])
 const [login, setLogin] = useState(false)//Customer login in status
 const [customerEmail, setCustomerEmail] = useState('signIn')//Customer login in status
 const [customerId, setCustomerId] = useState()//Customer login in status
+const [previous, setPrevious] = useState()//Customer login in status
 const [signInModal, setSignInModal] = useState(false)//used to activate sign in modal from nav bar link
 const [categorypick, setCategorypick] = useState("Clothes")//set Clothes category as a default product
 
@@ -88,16 +89,20 @@ const basket = cart.map(item=>(<div key={item._id}><Cart qty={item.qty} product=
 //List products. Item component is used in the map() method
 const display = productdata.map(item=>(<div key={item._id}><Item image={item.image} name={item.product} price={item.price} description={item.description} id={item._id} selectedid={selectedid}/></div>))
  
+//Purchase history
+
+
 // clears the chart after shopping
 const clearchart = ()=>{setCart([])
                        storeId.length = 0
   }// clears the chart after shopping
 
 //Customer login status
-const customerLogin = (e)=>{
+const customerLogin = (e, history)=>{
    setLogin(true)
    setCustomerEmail(e.email)
    setCustomerId(e.id)
+   setPrevious(history)
 }
 
 //Activate login initiated by sign in in the nav bar
@@ -133,6 +138,8 @@ const logOut = ()=>{
 
         
         <RegLoginModal customerLogin={customerLogin} signInModal={signInModal} closeModal={closeModal}/>
+         <h5>Purchase History</h5>
+        <div>{previous}</div>
         
       </div>
     </div>

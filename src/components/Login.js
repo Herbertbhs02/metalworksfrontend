@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
+import Products from './Products';
 
 class Login extends Component {
     constructor(props) {
@@ -19,11 +20,18 @@ class Login extends Component {
                 const response = await axios.post('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/login', log)
                 if(response.data.status===200){
                   //remove the login modal
-                  this.props.login(response.data)
+                 
                   
                   //store the token in local store
                   localStorage.setItem('auth-token', response.data.token);localStorage.setItem('id', response.data.id)
-                  
+                  const records = await axios.get('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/customerHistory',{params:{customerId:response.data.id}})
+                  console.log('records', records.data)
+                const history = records.data.map(item=>(<div><b>{new Date(item.date).toDateString()}</b><br/> Total: £{item.totalAmount}
+                      {item.purchase.map(item=>(<div>{item.qty}x{item.product}:£{item.price}</div>))}
+                
+                </div>))
+
+                  this.props.login(response.data, history)
                   //Use customer id to fetch previous purchase
                   swal('successfully login, Click ok to continue shopping')
                 }else{
