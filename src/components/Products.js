@@ -118,6 +118,7 @@ const logOut = ()=>{
   setCustomerEmail('signIn')
   setLogin(false)
   setCart([])
+  setPrevious()
   storeId.length = 0
 }
 
