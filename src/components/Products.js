@@ -18,6 +18,7 @@ const [productdata, setProductdata] = useState([])//data.products
 const [cart, setCart] = useState([])
 const [login, setLogin] = useState(false)//Customer login in status
 const [customerEmail, setCustomerEmail] = useState('signIn')//Customer login in status
+const [customerId, setCustomerId] = useState()//Customer login in status
 const [signInModal, setSignInModal] = useState(false)//used to activate sign in modal from nav bar link
 const [categorypick, setCategorypick] = useState("Clothes")//set Clothes category as a default product
 
@@ -88,14 +89,17 @@ const basket = cart.map(item=>(<div key={item._id}><Cart qty={item.qty} product=
 const display = productdata.map(item=>(<div key={item._id}><Item image={item.image} name={item.product} price={item.price} description={item.description} id={item._id} selectedid={selectedid}/></div>))
  
 // clears the chart after shopping
-const clearchart = ()=>{setCart([])}// clears the chart after shopping
+const clearchart = ()=>{setCart([])
+                       storeId.length = 0
+  }// clears the chart after shopping
 
 //Customer login status
 const customerLogin = (e)=>{
    setLogin(true)
-   setCustomerEmail(e)
+   setCustomerEmail(e.email)
+   setCustomerId(e.id)
 }
-console.log(login)
+
 //Activate login initiated by sign in in the nav bar
 const activatelogin = ()=>{
   setSignInModal(true)
@@ -109,6 +113,7 @@ const logOut = ()=>{
   setCustomerEmail('signIn')
   setLogin(false)
   setCart([])
+  storeId.length = 0
 }
 
   return (
@@ -122,7 +127,7 @@ const logOut = ()=>{
 
             <div className='basket-area col s12 m2'>              
             <i class="material-icons ">shopping_cart</i><b>Basket cost: </b><span className='totalprice'>£{totalprice.toFixed(2)}</span>
-            {(cart.length!==0 && <Checkout cart={cart} totalprice={totalprice} clearchart ={clearchart} />)}  
+            {(cart.length!==0 && <Checkout cart={cart} totalprice={totalprice} clearchart ={clearchart} customerId={customerId}/>)}  
                 {(cart.length!==0 ? basket : <p>Basket Empty</p>)}    
           </div>
 

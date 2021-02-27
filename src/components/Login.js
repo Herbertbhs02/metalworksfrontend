@@ -15,23 +15,21 @@ class Login extends Component {
     login = async(e)=>{e.preventDefault();
                 
                 const {isLogin, ...log} = this.state
-                //console.log(log)
+                
                 const response = await axios.post('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/login', log)
                 if(response.data.status===200){
                   //remove the login modal
-                  this.props.login(response.data.email)
+                  this.props.login(response.data)
                   
-
                   //store the token in local store
                   localStorage.setItem('auth-token', response.data.token);localStorage.setItem('id', response.data.id)
                   
-                  //show customer email in the nav-bar
                   //Use customer id to fetch previous purchase
                   swal('successfully login, Click ok to continue shopping')
                 }else{
                   return swal(response.data.errorMessage)
                 }
-                console.log(response.data)
+                
                 this.setState({email:'',
                                password:'',
                                isLogin:true

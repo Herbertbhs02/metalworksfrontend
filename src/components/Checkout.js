@@ -32,13 +32,21 @@ const customStyles = {
 };
 
 Modal.setAppElement('#root')
-const Checkout = ({cart,totalprice, clearchart}) => {
+const Checkout = ({cart,totalprice, clearchart, customerId}) => {
+
+  const [product] = React.useState({
+    name:'purchasedItems',          
+    price:totalprice,
+    description:'variousItems',
+    clearchart,
+    cart,
+    customerId
+  });
   
   const [modalIsOpen,setIsOpen] = useState(false);
 
   const openModal = ()=>{
     setIsOpen(true)
-   
   }
   const  closeModal = ()=>{
     setIsOpen(false);
@@ -48,25 +56,21 @@ const Checkout = ({cart,totalprice, clearchart}) => {
  
 //End of modal code
 //Stripe payment code
-    const [product] = React.useState({
-      name:'purchasedItems',          
-      price:totalprice.toFixed(2),
-      description:'variousItems',
-      clearchart,
-      cart
-    });
+  
 
       const handleToken = async(token, addresses,)=> {
-      // console.log({token, addresses})
-      console.log(product)
-      const response = await axios.post('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/checkout',{token,product}) 
+      
+      const response = await axios.post('http://localhost:8080/checkout',{token,product, totalprice}) 
       
      const { status } = response.data;
      console.log("Response:", response.data);
      if (status === "success") {
-       toast("Success! Check email for details", { type: "success" });
+       toast("Success! check your email", { type: "success" });
        setIsOpen(false);
-      product.clearchart()// clear cart after payment
+      clearchart()// clear cart after payment
+      //Save customer purchase details 
+      const res = await axios.post('http://localhost:8080/purchasehistory',{cart, totalprice, customerId})      
+       console.log(res)
       
      } else {
        toast("Something went wrong", { type: "error" });
@@ -99,7 +103,6 @@ const Checkout = ({cart,totalprice, clearchart}) => {
         shippingAddress
         amount={totalprice*100}
       />
-       
         </Modal>
     </div>
   )
