@@ -124,8 +124,8 @@ const logOut = ()=>{
 //Run this function when checkout is done to update purchase history on the page.
 const updateparchase = async()=>{
   const records = await axios.get('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/customerHistory',{params:{customerId:customerId}})
-                  const history = records.data.map(item=>(<div><b>{new Date(item.date).toDateString()}</b><br/> Total: £{item.totalAmount}
-                      {item.purchase.map(item=>(<div>{item.qty}x{item.product}:£{item.price}</div>))}
+                  const history = records.data.map(item=>(<div><b>{new Date(item.date).toDateString()}</b><br/> Total: £{item.totalAmount.toFixed(2)}
+                      {item.purchase.map(item=>(<div>{item.qty}x{item.product}:£{item.price.toFixed(2)}</div>))}
                 </div>))
               setPrevious(history)
 }
