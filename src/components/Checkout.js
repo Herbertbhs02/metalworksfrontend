@@ -32,7 +32,7 @@ const customStyles = {
 };
 
 Modal.setAppElement('#root')
-const Checkout = ({cart,totalprice, clearchart, customerId}) => {
+const Checkout = ({cart,totalprice, clearchart, customerId, updateparchase}) => {
 
   const [product] = React.useState({
     name:'purchasedItems',          
@@ -40,10 +40,12 @@ const Checkout = ({cart,totalprice, clearchart, customerId}) => {
     description:'variousItems',
     clearchart,
     cart,
-    customerId
+    customerId,
+    updateparchase
   });
   
   const [modalIsOpen,setIsOpen] = useState(false);
+  
 
   const openModal = ()=>{
     setIsOpen(true)
@@ -71,7 +73,9 @@ const Checkout = ({cart,totalprice, clearchart, customerId}) => {
       //Save customer purchase details 
       const res = await axios.post('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/purchasehistory',{cart, totalprice, customerId})      
        console.log('History',res)
-      
+     //update customer purchase history in the browser
+       product.updateparchase()
+     
      } else {
        toast("Something went wrong", { type: "error" });
      }

@@ -89,7 +89,7 @@ const basket = cart.map(item=>(<div key={item._id}><Cart qty={item.qty} product=
 //List products. Item component is used in the map() method
 const display = productdata.map(item=>(<div key={item._id}><Item image={item.image} name={item.product} price={item.price} description={item.description} id={item._id} selectedid={selectedid}/></div>))
  
-//Purchase history
+
 
 
 // clears the chart after shopping
@@ -121,6 +121,15 @@ const logOut = ()=>{
   setPrevious()
   storeId.length = 0
 }
+//Run this function when checkout is done to update purchase history on the page.
+const updateparchase = async()=>{
+  const records = await axios.get('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/customerHistory',{params:{customerId:customerId}})
+                  const history = records.data.map(item=>(<div><b>{new Date(item.date).toDateString()}</b><br/> Total: £{item.totalAmount}
+                      {item.purchase.map(item=>(<div>{item.qty}x{item.product}:£{item.price}</div>))}
+                </div>))
+              setPrevious(history)
+}
+
 
   return (
       <div>
@@ -133,7 +142,7 @@ const logOut = ()=>{
 
             <div className='basket-area col s12 m2'>              
             <i class="material-icons ">shopping_cart</i><b>Basket cost: </b><span className='totalprice'>£{totalprice.toFixed(2)}</span>
-            {(cart.length!==0 && <Checkout cart={cart} totalprice={totalprice} clearchart ={clearchart} customerId={customerId}/>)}  
+            {(cart.length!==0 && <Checkout cart={cart} totalprice={totalprice} clearchart ={clearchart} customerId={customerId} updateparchase={updateparchase}/>)}  
                 {(cart.length!==0 ? basket : <p>Basket Empty</p>)}    
           </div>
 
