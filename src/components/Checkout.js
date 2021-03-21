@@ -62,7 +62,7 @@ const Checkout = ({cart,totalprice, clearchart, customerId, updateparchase}) => 
 
       const handleToken = async(token, addresses,)=> {
       
-      const response = await axios.post('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/checkout',{token,product, totalprice}) 
+      const response = await axios.post('https://awspractice.me/checkout',{token,product, totalprice}) 
       //'http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/checkout'
      const { status } = response.data;
      console.log("Response:", response.data);
@@ -71,7 +71,7 @@ const Checkout = ({cart,totalprice, clearchart, customerId, updateparchase}) => 
        setIsOpen(false);
       clearchart()// clear cart after payment
       //Save customer purchase details 
-      const res = await axios.post('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/purchasehistory',{cart, totalprice, customerId})      
+      const res = await axios.post('https://awspractice.me/purchasehistory',{cart, totalprice, customerId})      
        console.log('History',res)
      //update customer purchase history in the browser
        product.updateparchase()

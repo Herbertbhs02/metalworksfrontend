@@ -17,7 +17,7 @@ class Login extends Component {
                 
                 const {isLogin, ...log} = this.state
                 
-                const response = await axios.post('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/login', log)
+                const response = await axios.post('https://awspractice.me/login', log)
                 if(response.data.status===200){
                   //remove the login modal
                  
@@ -25,7 +25,7 @@ class Login extends Component {
                   //store the token in local store
                   localStorage.setItem('auth-token', response.data.token);localStorage.setItem('id', response.data.id)//?? Not used
                   //Get customer purchase history
-                  const records = await axios.get('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/customerHistory',{params:{customerId:response.data.id}})
+                  const records = await axios.get('https://awspractice.me/customerHistory',{params:{customerId:response.data.id}})
                   const history = records.data.map(item=>(<div><b>{new Date(item.date).toDateString()}</b><br/> Total: £{item.totalAmount.toFixed(2)}
                       {item.purchase.map(item=>(<div>{item.qty}x{item.product}:£{item.price.toFixed(2)}</div>))}
                 </div>))

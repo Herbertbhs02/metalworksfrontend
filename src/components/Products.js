@@ -25,14 +25,14 @@ const [categorypick, setCategorypick] = useState("Clothes")//set Clothes categor
 
 //Function to select product category
 const selection = async(e)=>{
-  const response = await axios.get('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/retrieveproducts',{params:{category:e}})
+  const response = await axios.get('https://awspractice.me/retrieveproducts',{params:{category:e}})
   setProductdata(response.data)
 }
 
 useEffect(()=>{
   
   const getproducts = async()=>{
-  const res = await axios.get('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/retrieveproducts',{params:{category:categorypick}})
+  const res = await axios.get('https://awspractice.me/retrieveproducts',{params:{category:categorypick}})
   setProductdata(res.data)
   }
   getproducts()
@@ -123,7 +123,7 @@ const logOut = ()=>{
 }
 //Run this function when checkout is done to update purchase history on the page.
 const updateparchase = async()=>{
-  const records = await axios.get('http://onlineshoppingbackend-env.eba-zaj9kvmp.eu-west-2.elasticbeanstalk.com/customerHistory',{params:{customerId:customerId}})
+  const records = await axios.get('https://awspractice.me//customerHistory',{params:{customerId:customerId}})
                   const history = records.data.map(item=>(<div><b>{new Date(item.date).toDateString()}</b><br/> Total: £{item.totalAmount.toFixed(2)}
                       {item.purchase.map(item=>(<div>{item.qty}x{item.product}:£{item.price.toFixed(2)}</div>))}
                 </div>))
