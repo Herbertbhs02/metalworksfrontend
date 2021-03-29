@@ -123,7 +123,7 @@ const logOut = ()=>{
 }
 //Run this function when checkout is done to update purchase history on the page.
 const updateparchase = async()=>{
-  const records = await axios.get('https://awspractice.me//customerHistory',{params:{customerId:customerId}})
+  const records = await axios.get('https://awspractice.me/customerHistory',{params:{customerId:customerId}})
                   const history = records.data.map(item=>(<div><b>{new Date(item.date).toDateString()}</b><br/> Total: £{item.totalAmount.toFixed(2)}
                       {item.purchase.map(item=>(<div>{item.qty}x{item.product}:£{item.price.toFixed(2)}</div>))}
                 </div>))
