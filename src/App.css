@@ -11,83 +11,24 @@ header{
   display: flex;
   flex-wrap: wrap;
   background-color: #eee;
+  margin-left: 5px !important;
  
-}
-
-.basket-area{
-  background-color:#d7ccc8;
- 
-}
-.totalprice{
-  background-color: yellow;
-  font-size: large;
-}
-
-.basket{
-  background-color: #eee;
 }
 
 .Item{
   background-color: rgb(185, 201, 44);
-  max-width: 170px;
-  margin: 2px;
+  max-width: 300px;
+  margin: 4px;
 }
 
 .Item-content{
   font-size: 15px !important;
 }
 
-.Item-qty{
-  height: 30px !important;
-  width: 65px !important;
-  background-color:white !important;
-  border: 2px dotted black !important;
-}
-
 .Item-btn{
   height: 35px !important;
   margin-bottom:5px !important ;
 }
-
-
-
-.cart{
-  height:120px !important;
-  width: 200px !important;
-  background-color:#cddc39 ;
-  margin-bottom: 3px;
-}
- 
-.checkout{
-  background-color: #006064 !important;
-  width: 200px !important;
-  margin-bottom: 1%;
-}
-.cart-photo{
-  width: 100%;
-  height: 110px ;
-  margin: 2% !important;
-}
- .cart-info{
-   padding-left: 0% !important;
-   margin: 0% !important;
-   position: relative;
- }
-
- .delete-btn{
-   width: 27% !important;
-   height: 25%;
-   position: absolute;
-   top:0;
- }
-
- .add-btn{
-   margin-right:5% ;
- }
- 
- .icon-close{
-    position: absolute;
- }
 
  .card-more{
    position: relative;
@@ -121,16 +62,6 @@ header{
    margin-right: 30px;
  }
 
- .auth{
-   margin-right: 25px;
- }
-
- .modal-close{
-   position:absolute;
-   top:0;
-   right: 1px;
- }
-
  .navbar{
   width:auto;
   height:0.5%;
@@ -144,13 +75,6 @@ header{
   padding-left: 10px;
 }
 
-.navlogout{
-  position: absolute;
-  width: 194px;
-  display: none;
-  background-color:black;
-}
-
 .nav-link:hover ul{
   display: block ;
 }
@@ -158,6 +82,26 @@ header{
   margin-left: 14px;
 }
 
+.category{
+  margin-left: 5px !important;
+}
+
+.logo{
+  width: 90px!important;
+}
+
+@media only screen and (max-width: 800px) {
+  nav img{
+    position: relative;
+    top: 0px;
+    left: 60%;
+    width: 80px;
+   
+    border-radius: 8px;
+    box-shadow: 2px 1px  rgb(84, 84, 84);
+    border: 1px solid black;
+  }
+}
 
 
 

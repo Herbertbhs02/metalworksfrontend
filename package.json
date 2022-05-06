@@ -1,5 +1,5 @@
 {
-  "name": "online-shop",
+  "name": "metalworks",
   "homepage": ".",
   "version": "0.1.0",
   "private": true,
@@ -13,9 +13,7 @@
     "react-dom": "^17.0.1",
     "react-modal": "^3.12.1",
     "react-scripts": "4.0.1",
-    "react-stripe-checkout": "^2.6.3",
     "react-toastify": "^6.2.0",
-    "sweetalert": "^2.1.2",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

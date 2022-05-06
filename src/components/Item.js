@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import '../App.css';
 
-const Item = ({name,price,image,description,id,selectedid}) => {
+const Item = ({name,image,description}) => {
 
   const[qty, setQty] = useState(1)
   const amount = (e)=>{setQty(e.target.value)}        
@@ -15,7 +15,7 @@ const Item = ({name,price,image,description,id,selectedid}) => {
                 
                 <div className="card-content Item-content">
                 <p><b>Product:</b> {name}</p>
-                  <p><b>Price:</b> £{price.toFixed(2)}</p>
+                  
                   <span className="card-title activator "><i className="material-icons right">more</i></span>
                   
                 </div>
@@ -25,10 +25,7 @@ const Item = ({name,price,image,description,id,selectedid}) => {
                   <p>{description}</p>
                 </div>
                   
-                <input type='Number' min='1' placeholder='Enter qty' size='4' value={qty} onChange={amount} className='Item-qty'/>
-                <button className="btn Item-btn waves-effect waves-light" onClick={()=>selectedid({id,qty:qty})}
-                type="submit" name="add">Add<i className="material-icons right">shopping_cart</i>   
-                </button>
+               
                
               </div>
   

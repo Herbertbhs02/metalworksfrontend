@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 const Category = ({selection}) => {
-  const [select, setSelect]= useState("Clothes")
+  const [select, setSelect]= useState("doors")
 
   const [categoryselect]= React.useState({
          selection
@@ -13,23 +13,34 @@ const Category = ({selection}) => {
       }
 
   return (
-    <div>
+    <div className='category'>
       <h6><b>Select  Product Category</b></h6>
       <p >
     <label className="radio-btn">
-      <input class="with-gap" value="Clother" name="Clothes" value="Clothes" type="radio" checked ={select==="Clothes"} onChange={onChangeValue} />
-      <span>Clothes </span>
+      <input class="with-gap"  name="doors" value="doors" type="radio" checked ={select==="doors"} onChange={onChangeValue} />
+      <span>Doors</span>
     </label>
 
     <label className="radio-btn">
-      <input class="with-gap" value="Shoes" name="Shoes" type="radio" value="Shoes" checked ={select==="Shoes"} onChange={onChangeValue} />
-      <span>Shoes</span>
+      <input class="with-gap" value="Welding" name="Welding" type="radio"  checked ={select==="Welding"} onChange={onChangeValue} />
+      <span>Welding</span>
     </label>
 
     <label className="radio-btn">
-      <input class="with-gap" value="Fruits" name="Fruits" type="radio" value="Fruits" checked={select==="Fruits"} onChange={onChangeValue} />
-      <span>Fruits</span>
+      <input class="with-gap" value="gate" name="gate" type="radio"  checked={select==="gate"} onChange={onChangeValue} />
+      <span>Gates</span>
     </label> 
+
+    <label className="radio-btn">
+      <input class="with-gap" value="showcase" name="showcase" type="radio"  checked={select==="showcase"} onChange={onChangeValue} />
+      <span>Showcase</span>
+    </label> 
+
+    <label className="radio-btn">
+      <input class="with-gap" value="windows" name="windows" type="radio"  checked={select==="windows"} onChange={onChangeValue} />
+      <span>Windows</span>
+    </label> 
+
   </p>
         
 
