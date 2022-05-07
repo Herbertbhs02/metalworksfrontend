@@ -21,7 +21,6 @@ const Navbar = () => {
      <li ><div>Email:Patrickmutumba@yahoo.co.uk </div></li>
      <li ><li><div>Tel:+256 759129000</div></li></li>
      <li ><div>Whatsapp:+256 782 473770</div></li>
-     <li ><a href="/services">OUR SERVICES</a></li>
    </ul>
  </nav>
  <ul class="sidenav side teal lighten-4"  id="mobile">

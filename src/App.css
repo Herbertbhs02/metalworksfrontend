@@ -92,8 +92,9 @@ header{
  
  .product-image {
    height: 350px;
+  
  }
- 
+
 @media only screen and (max-width: 800px) {
   nav img{
     position: relative;
@@ -113,6 +114,12 @@ li div {
 .logo-name {
   margin-left: 10px!important;
   text-shadow: 3px 2px  rgb(17, 16, 16);
+}
+
+.services{
+  margin: 0px 2px 10px 10px !important;
+  width: 300px !important;
+ 
 }
 
 

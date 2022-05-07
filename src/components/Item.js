@@ -4,10 +4,9 @@ import '../App.css';
 const Item = ({name,image,description}) => {
 
   const[qty, setQty] = useState(1)
-  const amount = (e)=>{setQty(e.target.value)}        
+ // const amount = (e)=>{setQty(e.target.value)}        
   return (
      
-          
              <div className="card Item">
                 <div className="card-image waves-effect waves-block waves-light">
                   <img src={image} alt='product-image' className='product-image'/>
@@ -15,7 +14,6 @@ const Item = ({name,image,description}) => {
                 
                 <div className="card-content Item-content">
                 <p><b>Product:</b> {name}</p>
-                  
                   <span className="card-title activator "><i className="material-icons right">more</i></span>
                   
                 </div>
