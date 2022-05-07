@@ -9,10 +9,6 @@ import Navbar from './Navbar';
 const Products = () => {
 
 const [productdata, setProductdata] = useState([])//data.products
-
-
-
-
 const [categorypick, setCategorypick] = useState("doors")//set Clothes category as a default product
 
 //Function to select product category
@@ -32,11 +28,8 @@ useEffect(()=>{
   getproducts()
 },[])
 
-
-
 //List products. Item component is used in the map() method
 const display = productdata.map(item=>(<div key={item._id}><Item image={item.image} name={item.product} price={item.price} description={item.description} id={item._id} /></div>))
- 
 
   return (
       <div>
