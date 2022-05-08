@@ -18,7 +18,6 @@ const Item = ({name,image,description}) => {
                   
                 </div>
                 <div className="card-reveal orange darken-1">
-                  
                   <span className="card-title  card-more grey-text text-darken-4"><b>{name}</b><i className=" icon-close material-icons right">close</i></span>
                   <p>{description}</p>
                 </div>

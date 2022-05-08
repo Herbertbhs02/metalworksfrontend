@@ -21,14 +21,15 @@ const Navbar = () => {
      <li ><div>Email:Patrickmutumba@yahoo.co.uk </div></li>
      <li ><li><div>Tel:+256 759129000</div></li></li>
      <li ><div>Whatsapp:+256 782 473770</div></li>
+     <li ><li><div>Tel:+44 7517447989</div></li></li>
    </ul>
  </nav>
- <ul class="sidenav side teal lighten-4"  id="mobile">
+ <ul class="sidenav side light-blue white-text darken-1"  id="mobile">
      <li><div>Email:Patrickmutumba@yahoo.co.uk</div></li>
      <li><div>Tel:+256 759129000</div></li>
      <li><div>Tel:+44 7517447989</div></li>
      <li><div>Whatsapp:+256 782 473770</div></li>
-     <li ><a href="/services">OUR SERVICES</a></li>
+     
      
      <li><a class="sidenav-close" href="#!"><i class="material-icons right">close</i></a></li>
  </ul>

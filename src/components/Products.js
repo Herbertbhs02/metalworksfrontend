@@ -4,6 +4,7 @@ import Item from './Item'
 import Services from './Services'
 import Category from './Category'
 import Navbar from './Navbar';
+import Footer from './Footer'
 
 const display = [];
 
@@ -39,6 +40,7 @@ const display2 = productdata.map(item=>(<div key={item._id}><Services  name={ite
               <div className=' products  '>
                     {display2}
               </div>  
+             <Footer/>
       </div>
   
     )
@@ -52,6 +54,7 @@ const display2 = productdata.map(item=>(<div key={item._id}><Services  name={ite
             <div className=' products  '>
                   {display1}
             </div>  
+            <Footer/>
     </div>
 
   )
