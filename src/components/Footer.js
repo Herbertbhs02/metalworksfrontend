@@ -25,8 +25,8 @@ const Footer = () => {
           </div>
           <div class="footer-copyright grey darken-3">
             <div class="container">
-            © 2022 Herbert Ssevume
-            <p class="grey-text text-lighten-4 right" href="#!">Front and back end website developer</p>
+            © 2022 Herbert Ssevume. Developer and Technologist
+            {/* <p class="grey-text text-lighten-4 right" href="#!">Developer and Technologist</p> */}
             </div>
           </div>
         </footer>
