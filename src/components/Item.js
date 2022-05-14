@@ -14,7 +14,7 @@ const Item = ({name,image,description}) => {
                 
                 <div className="card-content Item-content">
                 <p><b>Product:</b> {name}</p>
-                  <span className="card-title activator "><i className="material-icons right">more</i></span>
+                  <span className="card-title activator ">More..</span>
                   
                 </div>
                 <div className="card-reveal orange darken-1">

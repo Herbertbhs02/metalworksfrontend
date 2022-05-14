@@ -11,7 +11,7 @@ const Services = ({name,description}) => {
               <p>{description}</p>
             </div>
             <div class="card-action white-text blue darken-4 contact-service">
-            <h6 class="white-text">Contacts:</h6>
+            <h6 class="white-text">Contact us:</h6>
               <h6>Tel:+256 759129000</h6>
               <h6 >Tel:+44 7517447989</h6>
               <h6 >Whatsapp:+256 782 473770</h6>
