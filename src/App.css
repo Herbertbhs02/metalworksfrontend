@@ -17,8 +17,8 @@ header{
 
 .Item{
   background-color: rgb(185, 201, 44);
-  max-width: 300px;
-  margin: 4px;
+  width: 300px !important;
+  margin: 4px !important;
 }
 
 .Item-content{
@@ -119,19 +119,22 @@ li div {
 .services{
   position:relative !important;
  font-weight: 600 !important;
-  margin: 0px 0px 0px 10px !important;
-  width: 300px !important;
+  margin: 0px 4px 0px 4% !important;
+  width: 250px !important;
   height: 350px !important;
-  margin-bottom: 3px !important;
- 
+  margin-bottom: 10px !important;
 }
 
   .contact-service{
     position:absolute !important;
     top: 55% !important;
     width: 300px !important;
+    
     /* min-height: calc(74vh - 70px); */
   }
-
+ .footer{
+  margin: 2px !important;
+  width: auto !important;
+ }
 
 
