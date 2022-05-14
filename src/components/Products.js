@@ -23,7 +23,7 @@ const selection = async(e)=>{
 useEffect(()=>{
   const getproducts = async()=>{
   const res = await axios.get('http://metalworksback-env.eba-wjhkzvh7.eu-west-2.elasticbeanstalk.com/retrievework',{params:{category:categorypick}})
-  // const res = await axios.get('http://localhost:7070/retrievework',{params:{category:categorypick}})
+   //const res = await axios.get('http://localhost:7070/retrievework',{params:{category:categorypick}})
   setProductdata(res.data)
   }
   getproducts()
