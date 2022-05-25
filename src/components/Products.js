@@ -16,7 +16,7 @@ const [categorypick, setCategorypick] = useState("doors")//set Clothes category 
 //Function to select product category
 const selection = async(e)=>{
    const response = await axios.get('http://metalworksback-env.eba-wjhkzvh7.eu-west-2.elasticbeanstalk.com/retrievework',{params:{category:e}})
-   //const response = await axios.get('http://localhost:7070/retrievework',{params:{category:e}})
+ // const response = await axios.get('http://localhost:7070/retrievework',{params:{category:e}})
   setProductdata(response.data)
 }
 //xxxx

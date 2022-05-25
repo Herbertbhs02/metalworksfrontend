@@ -90,10 +90,9 @@ header{
   width: 80px!important;
 }
  
- .product-image {
+ /* .product-image {
    height: 350px;
-  
- }
+ } */
 
 @media only screen and (max-width: 800px) {
   nav img{
