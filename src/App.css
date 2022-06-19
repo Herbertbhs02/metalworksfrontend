@@ -18,7 +18,7 @@ header{
 .Item{
   background-color: rgb(185, 201, 44);
   width: 300px !important;
-  margin: 4% !important;
+  margin: 0px 4px 4px 4% !important;
 }
 
 .Item-content{
@@ -69,6 +69,10 @@ header{
   border-radius:6px;
   box-shadow: 4px 3px gray;
   margin:2px; 
+  position: sticky;
+  top: 0;
+  transition-timing-function: ease-in;
+  transition: 0.5
 }
 
 .nav-wrapper{
@@ -84,15 +88,25 @@ header{
 
 .category{
   margin-left: 5px !important;
+  z-index: 1;
+  background-color: beige;
 }
 
 .logo{
   width: 80px!important;
 }
- 
- /* .product-image {
-   height: 350px;
- } */
+ /* For parallax effect on both small and big screen */
+.parallax02{
+  height: 160px;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+}
+@media only screen and (max-width: 600px) {
+  .parallax-container{
+   height: 50px;
+  }
+}
+
 
 @media only screen and (max-width: 800px) {
   nav img{
@@ -135,5 +149,13 @@ li div {
   margin: 2px !important;
   width: auto !important;
  }
-
-
+.home{
+  background-color: #eee;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  padding: 1.5% !important;
+}
+.home02{
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+}
